@@ -1,0 +1,28 @@
+
+### Create Reservation
+POST http://localhost:3000/reservations
+Content-Type: application/json
+
+{
+    "startDate": "2022-11-01",
+    "endDate": "2022-11-21"
+}
+
+### List Reservations
+GET http://localhost:3000/reservations?
+
+### Get Reservation
+GET http://localhost:3000/reservations/678781f6068594bc3fb3bc6e
+
+### Update Reservation
+Patch http://localhost:3000/reservations/678781f6068594bc3fb3bc6e
+Content-Type: application/json
+
+{
+    "startDate": "2022-01-02",
+    "endDate": "2022-01-08"
+}
+
+
+### Delete Reservation
+DELETE http://localhost:3000/reservations/678781f6068594bc3fb3bc6e
