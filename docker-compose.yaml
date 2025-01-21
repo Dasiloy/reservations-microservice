@@ -14,9 +14,24 @@ services:
    restart: always
    ports:
      - '3000:3000'
-   environment:
-     PORT: '3000'
-     MONGO_URI: mongodb://mongo:27017/local
+   env_file:
+     - ./apps/reservations/.env
    command: npm run start:dev reservations
+  auth:
+   depends_on:
+     - mongo
+   build: 
+     context: .
+     dockerfile: ./apps/auth/Dockerfile
+     target: development
+   volumes:
+     - .:/usr/src/app
+     - /usr/src/app/node_modules
+   restart: always
+   ports:
+     - '3001:3001'
+   env_file:
+     - ./apps/auth/.env
+   command: npm run start:dev auth
     
     
