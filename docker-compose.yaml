@@ -13,7 +13,7 @@ services:
      - /usr/src/app/node_modules
    restart: always
    ports:
-     - '3000:3000'
+     - '3002:3002'
    env_file:
      - ./apps/reservations/.env
    command: npm run start:dev reservations
@@ -29,7 +29,7 @@ services:
      - /usr/src/app/node_modules
    restart: always
    ports:
-     - '3001:3001'
+     - '3000:3000'
    env_file:
      - ./apps/auth/.env
    command: npm run start:dev auth

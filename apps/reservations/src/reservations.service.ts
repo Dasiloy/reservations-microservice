@@ -4,14 +4,19 @@ import { FilterQuery } from 'mongoose';
 import { ReservationDocument } from './reservations.model';
 import { CreateReservationDto } from './dtos/create-reservation.dto';
 import { UpdateReservationDto } from './dtos/update-reservation.dto';
+import { UserDocument } from 'apps/auth/src/users/user.model';
 
 @Injectable()
 export class ReservationsService {
   constructor(private readonly repo: ReservationRepository) {}
 
-  createReservations(data: CreateReservationDto): Promise<ReservationDocument> {
+  createReservations(
+    data: CreateReservationDto,
+    user: UserDocument,
+  ): Promise<ReservationDocument> {
     return this.repo.create({
       ...data,
+      user,
     });
   }
 

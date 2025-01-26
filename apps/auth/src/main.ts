@@ -11,9 +11,15 @@ async function bootstrap() {
   // create the http server
   const app = await NestFactory.create(AuthModule);
 
+  const config = app.get(ConfigService);
+
   // connect to the auth microservice
   app.connectMicroservice({
     transport: Transport.TCP,
+    options: {
+      host: '0.0.0.0',
+      port: config.get('TCP_PORT'),
+    },
   });
 
   app.use(cookieParser());
@@ -24,8 +30,8 @@ async function bootstrap() {
       whitelist: true,
     }),
   );
-  const config = app.get(ConfigService);
+
   await app.startAllMicroservices();
-  await app.listen(config.get('PORT'));
+  await app.listen(config.get('HTTP_PORT'));
 }
 bootstrap();

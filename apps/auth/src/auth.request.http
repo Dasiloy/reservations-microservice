@@ -1,5 +1,5 @@
 ### Login
-POST http://localhost:3001/auth/login
+POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ### Sign Up
-POST http://localhost:3001/users
+POST http://localhost:3000/users
 Content-Type: application/json
 
 {
@@ -17,4 +17,4 @@ Content-Type: application/json
 }
 
 ### Get user info
-GET http://localhost:3001/users
+GET http://localhost:3000/users

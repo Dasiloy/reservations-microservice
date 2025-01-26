@@ -1,6 +1,6 @@
 
 ### Create Reservation
-POST http://localhost:3000/reservations
+POST http://localhost:3002/reservations
 Content-Type: application/json
 
 {
@@ -9,13 +9,13 @@ Content-Type: application/json
 }
 
 ### List Reservations
-GET http://localhost:3000/reservations?
+GET http://localhost:3002/reservations?
 
 ### Get Reservation
-GET http://localhost:3000/reservations/678781f6068594bc3fb3bc6e
+GET http://localhost:3002/reservations/678781f6068594bc3fb3bc6e
 
 ### Update Reservation
-Patch http://localhost:3000/reservations/678781f6068594bc3fb3bc6e
+Patch http://localhost:3002/reservations/678781f6068594bc3fb3bc6e
 Content-Type: application/json
 
 {
@@ -25,4 +25,4 @@ Content-Type: application/json
 
 
 ### Delete Reservation
-DELETE http://localhost:3000/reservations/678781f6068594bc3fb3bc6e
+DELETE http://localhost:3002/reservations/678781f6068594bc3fb3bc6e
